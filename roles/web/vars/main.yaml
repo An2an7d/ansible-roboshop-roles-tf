@@ -1,0 +1,5 @@
+CATALOGUE_HOST: catalogue.nowheretobefound.online
+USER_HOST: user.nowheretobefound.online
+SHIPPING_HOST: shipping.nowheretobefound.online
+CART_HOST: cart.nowheretobefound.online
+PAYMENT_HOST: payment.nowheretobefound.online
