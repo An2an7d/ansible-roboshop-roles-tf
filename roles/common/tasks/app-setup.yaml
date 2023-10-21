@@ -19,13 +19,13 @@
     state: directory
   when: directory.stat.exists == False
 
-- name: "download {{component}} artifact"
-  ansible.builtin.get_url:
-    url: "https://roboshop-builds.s3.amazonaws.com/{{component}}.zip"
-    dest: /tmp
+# - name: "download {{component}} artifact"
+#   ansible.builtin.get_url:
+#     url: "https://roboshop-builds.s3.amazonaws.com/{{component}}.zip"
+#     dest: /tmp
 
-- name: "unzipping {{component}} artifact"
+- name: "download artifact from nexus and unarchive"
   ansible.builtin.unarchive:
-    src: "/tmp/{{component}}.zip"
+    src: "{{nexus_url}}/{{component}}/{{group_id}}/{{component}}/{{app_version}}/{{component}}-{{app_version}}.zip"
     dest: /app
     remote_src: yes
