@@ -1,3 +1,7 @@
+- name: print version
+  debug:
+    msg: "app_version: {{app_version}}"
+
 - name: install nodejs
   ansible.builtin.import_role:
     name: common
