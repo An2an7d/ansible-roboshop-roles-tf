@@ -11,3 +11,4 @@
   ansible.builtin.service:
     state: restarted
     name: "{{component}}"
+    enabled: yes
