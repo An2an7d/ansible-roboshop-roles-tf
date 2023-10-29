@@ -1,11 +1,5 @@
-- name: Fetch SSM Parameter
-  aws_ssm:
-    name: /roboshop/dev/mongodb_url
-  register: ssm_result
-
-- name: Debug SSM Parameter Value
-  debug:
-    msg: "{{ssm_result.parameter.value}}"
+- name: lookup ssm parameter store in specified region
+  debug: msg="{{ lookup('amazon.aws.aws_ssm', '/roboshop/{{env}}/mongodb_url', region='us-east-1' ) }}"
 
 - name: copy systemd template
   ansible.builtin.template:
