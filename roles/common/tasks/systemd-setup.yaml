@@ -1,5 +1,5 @@
 - name: lookup ssm parameter store in specified region
-  debug: msg="{{ lookup('amazon.aws.aws_ssm', '/roboshop/{{env}}/mongodb_url', region='us-east-1' ) }}"
+  debug: msg="{{ lookup('amazon.aws.aws_ssm', 'hello', region='us-east-1' ) }}"
 
 - name: copy systemd template
   ansible.builtin.template:
